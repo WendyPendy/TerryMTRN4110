@@ -1,0 +1,35 @@
+Controls:
+	W - Move forwards
+	D - Pivot 90 degrees to the right
+	A - Pivot 90 degress to the left
+	R - Read in initial position from 'InitialPosition.txt'
+	F - Exit the robot
+
+Instructions:
+This feature aims to provide the user with manual control of the robot through keyboard inputs.
+
+To start the simulation, the user must first select the 'robobots_keyboard_movement' controller first.
+Upon running the simulation, the user will be prompted to observe and input the initial position of
+the robot in 'InitialPosition.txt' in the main directory. The initial position should be provided in a
+format such as:
+	00S
+Where the first character represents the initial row, the second character represents the initial 
+column and the third character represents the heading of the robot (either 'N','S','E','W').
+Once completed, the user can press R to prompt the robot to read the file.
+
+When running the program, the user must first click on the robot in the simulation to allow for 
+keyboard controls. The user can control the robot using the W, A and D keys to move forwards one 
+cell, pivot left 90 degrees and pivot right 90 degrees respectively. Upon completeion of any 
+motion, the robot will display its current position and heading in the console.
+
+Once the user is satisfied with the manual control of the robot, the user can press F to finish and exit
+the program.
+
+Warnings:
+The robot does not have wall or obstacle detection. If the robot collides with a wall, it is at risk of
+having its current motion interupted or future motion be off course. 
+
+Even though the robot only takes one input at a time and generally will accept an input until
+a current action is completed, in some edge cases the robot can attempt another action while midway
+through another one. To prevent this, please avoid spamming the keyboard and only attempt a new movement
+when a previos one is completed.

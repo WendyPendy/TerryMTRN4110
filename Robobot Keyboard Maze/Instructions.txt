@@ -1,0 +1,49 @@
+// For teammates: The controller thingy is a bit scuffed, we make a new controller from scratch
+and copy the code over. There are some unneed files in the main directory like solution and
+MotionExecution. Those will be deleted later. Feel free to check the code. I brute forced the
+map updating function and there is probably a more elegant way of doing it.
+
+Controls:
+	W - Move forwards
+	D - Pivot 90 degrees to the right
+	A - Pivot 90 degress to the left
+	P - Print the currently known map
+	F - Export map to Map.txt and exit the robot
+
+Instructions:
+This feature aims to create a text file representation of the map without knowledge of the map
+by providing the user keyboard controls to navigate. The user can explore as much of the map as
+they want and they can export what is currently known of the map to a Map.txt file for separate
+features such as Phase A and Phase B to use. This feature works under the assumption that the viewer
+can see the simulation in real-time.
+
+To start the simulation, the user must first select the 'robobots_keyboard_movement' controller first.
+Upon running the simulation, the user will be prompted to observe and input the initial position of
+the robot in 'InitialPosition.txt' in the main directory. The initial position should be provided in a
+format such as:
+	00S
+Where the first character represents the initial row, the second character represents the initial 
+column and the third character represents the heading of the robot (either 'N','S','E','W').
+Once completed, the user can press R to prompt the robot to read the file.
+
+When running the program, the user must first click on the robot in the simulation to allow for 
+keyboard controls. The user should also pivot the robot to the left or right once at the start 
+of the simulation. This is to ensure any potential wall behind the robot is accounted for. The 
+user can then drive the robot around the maze using the W, A and D keys. The user can only input 
+one key at a time and there is a delay between registration of key presses. I recommend running 
+the program in fast forward as the time taken for the robot to execute its motion and wall sensing 
+is quite long. After each motion, the robot will sense the walls around it and will display its 
+currrent position and wall information in the console. The user can also press P at any time to 
+show what the currently explored map looks like. When satisfied, the user can press F to export 
+the current map onto a text file and the program will finish.
+
+Warning:
+Do not run the robot out of bounds, it will crash.
+
+The robot does not have wall or obstacle detection. If the robot collides with a wall, it is at risk of
+having its current motion interupted or future motion be off course.
+
+Even though the robot only takes one input at a time and generally will accept an input until
+a current action is completed, in some edge cases the robot can attempt another action while midway
+through another one. To prevent this, please avoid spamming the keyboard and only attempt a new movement
+when a previos one is completed.
